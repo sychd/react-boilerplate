@@ -4,9 +4,9 @@
   "description": "React application boilerplate",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && NODE_ENV=production webpack --mode production",
+    "build": "rm -rf dist && webpack --config webpack.prod.js",
     "serve": "npx serve -p 9000 dist",
-    "start": "NODE_ENV=development webpack serve --mode development",
+    "start": "NODE_ENV=development webpack serve --config webpack.dev.js",
     "test": "echo \"To be done\" && exit 1",
     "lint": "eslint 'src/**/*.{js,ts,tsx,json}' && stylelint 'src/**/*.{css,scss}'",
     "format": "prettier --write 'src/**/*.{js,ts,tsx,md,json,css,scss}'",
@@ -23,6 +23,7 @@
     "@typescript-eslint/eslint-plugin": "^5.55.0",
     "@typescript-eslint/parser": "^5.55.0",
     "css-loader": "^6.7.3",
+    "dotenv-webpack": "^8.0.1",
     "eslint": "^8.36.0",
     "eslint-config-prettier": "^8.7.0",
     "eslint-plugin-prettier": "^4.2.1",
@@ -40,16 +41,17 @@
     "stylelint": "^15.2.0",
     "stylelint-config-standard-scss": "^7.0.1",
     "stylelint-prettier": "^3.0.0",
+    "stylelint-scss": "^4.5.0",
     "stylelint-webpack-plugin": "^4.1.0",
     "ts-loader": "^9.4.2",
     "typescript": "^4.9.5",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "webpack-dev-server": "^4.11.1",
+    "webpack-merge": "^5.8.0"
   },
   "dependencies": {
     "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "stylelint-scss": "^4.5.0"
+    "react-dom": "^18.2.0"
   }
 }
