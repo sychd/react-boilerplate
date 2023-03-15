@@ -1,0 +1,38 @@
+@use '/src/styles/variables';
+
+.app {
+  height: 100vh;
+  display: flex;
+  gap: variables.$space-md;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  &__images-container {
+    display: flex;
+    gap: variables.$space-md;
+  }
+
+  &__image {
+    height: 100px;
+    width: 100px;
+    border-radius: variables.$border-radius-md;
+    transition: transform 0.2s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &_cat-bg {
+      background-image: url('src/assets/images/sleeping-cat.png');
+      background-size: 100%;
+    }
+  }
+
+  &__title {
+    padding: variables.$space-md;
+    font-size: variables.$font-lg;
+    font-family: Helvetica, sans-serif;
+    color: variables.$text-primary;
+  }
+}
