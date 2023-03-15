@@ -41,8 +41,12 @@ module.exports = {
         test: /\.svg$/,
         use: ['@svgr/webpack'],
         generator: {
-          filename: path.join('svg', '[name].[contenthash].[ext]'),
+          filename: path.join('svg', '[name].[contenthash][ext]'),
         },
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)$/i,
+        type: 'asset/resource',
       },
     ],
   },
