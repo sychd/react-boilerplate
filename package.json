@@ -4,9 +4,9 @@
   "description": "React application boilerplate",
   "main": "index.js",
   "scripts": {
-    "build": "rm -rf dist && webpack --mode production",
+    "build": "rm -rf dist && NODE_ENV=production webpack --mode production",
     "serve": "npx serve -p 9000 dist",
-    "start": "webpack serve --mode development",
+    "start": "NODE_ENV=development webpack serve --mode development",
     "test": "echo \"To be done\" && exit 1",
     "lint": "eslint 'src/**/*.{js,ts,tsx,json}' && stylelint 'src/**/*.{css,scss}'",
     "format": "prettier --write 'src/**/*.{js,ts,tsx,md,json,css,scss}'",

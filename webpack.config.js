@@ -1,4 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
+const isDevelopment = process.env.NODE_ENV === 'development';
+console.info(`NODE_ENV=${process.env.NODE_ENV}`);
 
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
@@ -6,7 +8,6 @@ const ESLintPlugin = require('eslint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const StylelintPlugin = require('stylelint-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-
 module.exports = {
   entry: './src/index.ts',
   output: {
@@ -63,9 +64,13 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
     }),
-    new MiniCssExtractPlugin({
-      filename: '[name].[contenthash].css',
-    }),
+    new MiniCssExtractPlugin(
+      isDevelopment
+        ? {} // contenthash in file's name breaks HMR (file is regenerated and is not added to sources)
+        : {
+            filename: '[name].[contenthash].css',
+          },
+    ),
     new StylelintPlugin(),
     new BundleAnalyzerPlugin({
       analyzerMode: 'static',
