@@ -3,6 +3,9 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
   entry: './src/index.ts',
@@ -20,6 +23,10 @@ module.exports = {
         use: 'ts-loader',
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'postcss-loader', 'sass-loader'], // MiniCssExtractPlugin.loader to extract css from .js dist
       },
     ],
   },
@@ -39,6 +46,15 @@ module.exports = {
     }),
     new HtmlWebpackPlugin({
       template: path.join(__dirname, 'public', 'index.html'),
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash].css',
+    }),
+    new StylelintPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: 'static',
+      openAnalyzer: false,
+      reportFilename: 'bundle-report.html',
     }),
   ],
 };
