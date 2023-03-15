@@ -20,6 +20,7 @@ module.exports = {
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'prettier'],
   rules: {
     'prettier/prettier': ['error'],
+    'react/jsx-curly-brace-presence': 'error',
   },
   settings: {
     'import/resolver': {
