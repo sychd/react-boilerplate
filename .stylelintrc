@@ -4,7 +4,6 @@
   ],
   "extends": ["stylelint-prettier/recommended", "stylelint-config-standard-scss"],
   "rules": {
-    "scss/double-slash-comment-whitespace-inside": "off",
-    "scss/double-slash-comment-empty-line-before": "off"
+    "scss/double-slash-comment-empty-line-before": "never"
   }
 }
