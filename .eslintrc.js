@@ -22,6 +22,7 @@ module.exports = {
     'prettier/prettier': ['error'],
     'react/jsx-curly-brace-presence': 'error',
     '@typescript-eslint/ban-ts-comment': 'off',
+    'react/self-closing-comp': 'error',
   },
   settings: {
     'import/resolver': {

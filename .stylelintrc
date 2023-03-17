@@ -4,6 +4,11 @@
   ],
   "extends": ["stylelint-prettier/recommended", "stylelint-config-standard-scss"],
   "rules": {
-    "scss/double-slash-comment-empty-line-before": "never"
+    "scss/double-slash-comment-empty-line-before": "never",
+    "selector-pseudo-element-colon-notation": "single",
+    "declaration-block-no-shorthand-property-overrides": null,
+    "value-keyword-case": ["lower", {
+      "camelCaseSvgKeywords": true
+    }]
   }
 }

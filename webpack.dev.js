@@ -14,6 +14,7 @@ module.exports = merge(common, {
       directory: path.join(__dirname, 'build'),
     },
     port: 3000,
+    historyApiFallback: true, // makes SPA Router workable (https://ui.dev/react-router-cannot-get-url-refresh)
   },
   plugins: [new MiniCssExtractPlugin(), new DotenvPlugin({ path: '.env.dev' })],
 });
