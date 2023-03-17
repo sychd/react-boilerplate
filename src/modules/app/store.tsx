@@ -1,0 +1,21 @@
+import { configureStore } from '@reduxjs/toolkit';
+import { Provider } from 'react-redux';
+import React, { ReactNode } from 'react';
+import { counterReducer } from 'src/modules/counter/counter-slice';
+import { doggieApiSlice } from 'src/modules/doggies/doggies-slice';
+
+export const store = configureStore({
+  reducer: { counter: counterReducer, [doggieApiSlice.reducerPath]: doggieApiSlice.reducer },
+  middleware: (getDefaultMiddleware) => {
+    // Adding the api middleware enables caching, invalidation, polling,
+    // and other useful features of `rtk-query`.
+    return getDefaultMiddleware().concat(doggieApiSlice.middleware);
+  },
+});
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
+
+export const StoreProvider = ({ children }: { children: ReactNode }) => (
+  <Provider store={store}>{children}</Provider>
+);

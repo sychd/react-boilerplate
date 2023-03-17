@@ -1,0 +1,9 @@
+@use 'src/styles/variables.scss';
+
+.counter-page {
+  align-self: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: variables.$space-md;
+}
