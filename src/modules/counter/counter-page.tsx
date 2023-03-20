@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { useAppDispatch, useAppSelector } from 'src/modules/app/hooks';
 import { counterActions } from 'src/modules/counter/counter-slice';
 import './counter-page.scss';

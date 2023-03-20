@@ -50,6 +50,7 @@ Add ESLint and Prettier:
 - https://www.robinwieruch.de/webpack-eslint/
 - https://www.robinwieruch.de/prettier-eslint/
 - https://stackoverflow.com/questions/54543063/how-can-i-suppress-the-no-files-matching-the-pattern-message-in-eslint
+- https://blog.logrocket.com/12-essential-eslint-rules-react/
 
 Add SCSS, PostCSS:
 - https://habr.com/post/701724/

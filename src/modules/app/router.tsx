@@ -1,9 +1,10 @@
 import React from 'react';
 import { createBrowserRouter, RouterProvider, RouteObject } from 'react-router-dom';
-import { WelcomeScreen } from 'src/modules/welcome-screen/welcome-screen';
-import { ErrorPage } from 'src/modules/error/error-page';
-import { CounterPage } from 'src/modules/counter/counter-page';
+
 import { store } from 'src/modules/app/store';
+import { CounterPage } from 'src/modules/counter/counter-page';
+import { ErrorPage } from 'src/modules/error/error-page';
+import { WelcomeScreen } from 'src/modules/welcome-screen/welcome-screen';
 
 const ROUTES: RouteObject[] = [
   {

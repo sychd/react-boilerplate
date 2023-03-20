@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { Provider } from 'react-redux';
 import React, { ReactNode } from 'react';
+import { Provider } from 'react-redux';
+
+import { authReducer } from 'src/modules/auth/auth-slice';
 import { counterReducer } from 'src/modules/counter/counter-slice';
 import { doggieApiSlice } from 'src/modules/doggies/doggies-slice';
-import { authReducer } from 'src/modules/auth/auth-slice';
 
 export const store = configureStore({
   reducer: {
