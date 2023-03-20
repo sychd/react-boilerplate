@@ -3,9 +3,14 @@ import { Provider } from 'react-redux';
 import React, { ReactNode } from 'react';
 import { counterReducer } from 'src/modules/counter/counter-slice';
 import { doggieApiSlice } from 'src/modules/doggies/doggies-slice';
+import { authReducer } from 'src/modules/auth/auth-slice';
 
 export const store = configureStore({
-  reducer: { counter: counterReducer, [doggieApiSlice.reducerPath]: doggieApiSlice.reducer },
+  reducer: {
+    counter: counterReducer,
+    auth: authReducer,
+    [doggieApiSlice.reducerPath]: doggieApiSlice.reducer,
+  },
   middleware: (getDefaultMiddleware) => {
     // Adding the api middleware enables caching, invalidation, polling,
     // and other useful features of `rtk-query`.
