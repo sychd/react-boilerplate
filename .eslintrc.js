@@ -27,6 +27,17 @@ module.exports = {
     'react/self-closing-comp': 'error',
     'import/no-default-export': 'error',
     'import/order': 'error',
+    'no-restricted-imports': [
+      'error',
+      {
+        patterns: [
+          {
+            group: ['../*'],
+            message: 'Please, try to use absolute import instead',
+          },
+        ],
+      },
+    ],
   },
   overrides: [
     {
