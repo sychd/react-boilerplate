@@ -25,6 +25,9 @@ Project uses Prettier, ESLint, Stylelint tools. Please, set up your workspace to
 - Go to `Settings > Languages & Frameworks > JavaScript > Code Quality Tools > ESLint`, enable checkbox "Automatic ESLint Configuration"
 - Go to `Settings > Languages & Frameworks > Style Sheet > Stylelint`, change pattern to `{**/*,*}.{css,scss}`, enable on save
 
+To enable auto import with absolute paths for TypeScript:
+- Go to `Settings > Code Style > TypeScript > Imports`, select `Use paths realative to tsconfig.json`
+
 ### Environment files
 
 Take `.env.sample` file and create similar `.env.dev` and `.env.prod` with filled variables.
